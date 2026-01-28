@@ -1,14 +1,19 @@
 /* ===== 简约学术风格 ===== */
 
 :root {
-    --text: #333;
-    --text-light: #666;
-    --text-muted: #888;
+    --text: #2c3e50;
+    --text-light: #5a6c7d;
+    --text-muted: #8e9eab;
     --bg: #fff;
-    --bg-sidebar: #fafafa;
-    --border: #eee;
-    --accent: #8b0000;
-    --link: #1a0dab;
+    --bg-sidebar: #f8fafc;
+    --border: #e8eef3;
+    --accent: #4a6fa5;
+    --accent-light: #6b8cbe;
+    --accent-dark: #34506d;
+    --gradient-1: #667eea;
+    --gradient-2: #764ba2;
+    --link: #4a6fa5;
+    --card-shadow: 0 4px 15px rgba(74, 111, 165, 0.1);
 }
 
 * {
@@ -69,11 +74,13 @@ strong {
 }
 
 .profile-photo {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 180px;
     object-fit: cover;
-    border: 1px solid var(--border);
+    object-position: center top;
+    border: 3px solid var(--border);
     margin-bottom: 20px;
+    box-shadow: var(--card-shadow);
 }
 
 .profile h1 {
@@ -131,8 +138,9 @@ strong {
 }
 
 .nav-menu a:hover {
-    color: var(--accent);
+    color: var(--gradient-1);
     text-decoration: none;
+    padding-left: 5px;
 }
 
 /* ===== 主内容区 ===== */
@@ -154,7 +162,8 @@ strong {
     color: var(--text);
     margin-bottom: 25px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--gradient-1), var(--gradient-2)) 1;
 }
 
 .section p {
@@ -195,18 +204,58 @@ strong {
 }
 
 /* ===== 研究方向 ===== */
-.research-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.research-list li {
-    background: var(--bg-sidebar);
-    padding: 8px 18px;
+.research-card {
+    background: linear-gradient(135deg, var(--bg-sidebar) 0%, #fff 100%);
     border: 1px solid var(--border);
-    font-size: 0.95rem;
+    border-radius: 12px;
+    padding: 22px;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.research-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(74, 111, 165, 0.15);
+    border-color: var(--accent-light);
+}
+
+.research-card h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.research-card h4::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    background: linear-gradient(180deg, var(--gradient-1), var(--gradient-2));
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.research-tags span {
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 /* ===== 论文列表 ===== */
@@ -271,7 +320,10 @@ strong {
 
 .award-year {
     font-weight: 600;
-    color: var(--accent);
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     min-width: 50px;
 }
 
@@ -326,8 +378,8 @@ strong {
     }
 
     .profile-photo {
-        width: 130px;
-        height: 130px;
+        width: 120px;
+        height: 144px;
     }
 
     .nav-menu {
@@ -349,14 +401,14 @@ strong {
     .edu-time {
         width: auto;
     }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 500px) {
-    .research-list {
-        flex-direction: column;
-    }
-
-    .research-list li {
-        text-align: center;
+    .research-grid {
+        grid-template-columns: 1fr;
     }
 }
