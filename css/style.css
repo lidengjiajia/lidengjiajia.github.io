@@ -443,20 +443,22 @@ body {
 
 .edu-time {
     flex-shrink: 0;
-    width: 130px;
+    min-width: 110px;
     font-size: 0.85rem;
     font-weight: 600;
     color: #2563eb;
-    padding: 8px 14px;
+    padding: 8px 16px;
     background: rgba(37, 99, 235, 0.08);
     border-radius: 8px;
     text-align: center;
     white-space: nowrap;
+    margin-right: 8px;
 }
 
 .edu-detail {
     flex: 1;
     min-width: 0;
+    margin-left: 4px;
 }
 
 .edu-detail h3 {
@@ -704,15 +706,16 @@ body {
 }
 
 .award-item .award-year {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #2563eb;
-    margin-right: 8px;
+    display: inline;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    margin-right: 12px;
 }
 
 .award-item .award-text {
     color: #333;
+    font-size: 0.9rem;
 }
 
 .patent-list {
