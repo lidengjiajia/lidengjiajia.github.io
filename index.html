@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 动画背景 -->
-    <canvas id="particles-canvas"></canvas>
+    <!-- 两侧装饰动画 -->
+    <div class="side-decoration left"></div>
+    <div class="side-decoration right"></div>
     
     <!-- 导航栏 -->
     <nav class="navbar">
@@ -253,107 +254,54 @@
         </div>
     </footer>
 
-    <!-- 粒子动画脚本 -->
+    <!-- 两侧流动动画脚本 -->
     <script>
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
+        // 导航栏滚动效果
+        const navbar = document.querySelector('.navbar');
+        let lastScroll = 0;
         
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resize();
-        window.addEventListener('resize', resize);
-        
-        // 粒子配置
-        const particles = [];
-        const particleCount = 60;
-        const connectionDistance = 150;
-        const mouseRadius = 120;
-        
-        let mouse = { x: null, y: null };
-        
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
         });
         
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 2 + 1;
-            }
-            
-            update() {
-                // 边界反弹
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                
-                // 鼠标交互
-                if (mouse.x && mouse.y) {
-                    const dx = mouse.x - this.x;
-                    const dy = mouse.y - this.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < mouseRadius) {
-                        const force = (mouseRadius - dist) / mouseRadius;
-                        this.vx -= dx * force * 0.01;
-                        this.vy -= dy * force * 0.01;
-                    }
+        // 导航链接点击平滑滚动
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-                
-                this.x += this.vx;
-                this.y += this.vy;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(37, 99, 235, 0.4)';
-                ctx.fill();
-            }
-        }
-        
-        // 初始化粒子
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-        
-        function connectParticles() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (dist < connectionDistance) {
-                        const opacity = 1 - dist / connectionDistance;
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.2})`;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-        
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(p => {
-                p.update();
-                p.draw();
             });
-            
-            connectParticles();
-            requestAnimationFrame(animate);
-        }
+        });
         
-        animate();
+        // 滚动显示动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.edu-item, .research-card, .project-card, .pub-list li').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
