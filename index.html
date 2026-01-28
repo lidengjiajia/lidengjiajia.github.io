@@ -5,200 +5,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李登佳 | Dengjia Li</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- 主容器 -->
-    <div class="main-container">
-        
-        <!-- 侧边栏 -->
-        <aside class="sidebar">
-            <div class="profile">
-                <img src="images/profile.jpg" alt="李登佳" class="profile-photo">
-                <h1>李登佳</h1>
-                <p class="name-en">Dengjia Li, Ph.D.</p>
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <span class="logo">李登佳</span>
+            <div class="nav-links">
+                <a href="#about">关于</a>
+                <a href="#education">教育</a>
+                <a href="#research">研究</a>
+                <a href="#publications">论文</a>
+                <a href="#projects">项目</a>
+                <a href="#achievements">成果</a>
             </div>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="label">邮箱</span>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>李登佳</h1>
+                <p class="subtitle">Dengjia Li, Ph.D.</p>
+                <p class="tagline">区块链 · 金融科技 · 大语言模型</p>
+                <div class="hero-contact">
                     <a href="mailto:lidengjia@hnu.edu.cn">lidengjia@hnu.edu.cn</a>
+                    <span class="divider">|</span>
                     <a href="mailto:lidengjia@gmail.com">lidengjia@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="label">电话</span>
+                    <span class="divider">|</span>
                     <span>186 1399 7688</span>
                 </div>
-                <div class="contact-item">
-                    <span class="label">地址</span>
-                    <span>北京市海淀区中关村南一条3号中国科学院大学经济与管理学院</span>
-                    <span>北京市海淀区翠湖北环路9号中国人民银行清算总中心数据中心</span>
+            </div>
+            <div class="hero-photo">
+                <img src="images/profile.jpg" alt="李登佳">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="main-content">
+        
+        <!-- 关于我 -->
+        <section id="about" class="section">
+            <h2>关于我</h2>
+            <div class="about-text">
+                <p>我于2014年进入<strong>湖南大学数学与计量经济学院</strong>学习数学与应用数学专业，2018年获得理学学士学位，导师为王节艳教授。本科期间打下了扎实的数学基础，为后续研究工作奠定了坚实的理论功底。</p>
+                <p>2018年至2024年，我在<strong>湖南大学工商管理学院</strong>攻读管理科学与工程专业博士学位，导师为陈新教授和马超群教授。目前，我在<strong>中国人民银行清算总中心</strong>和<strong>中国科学院大学经济与管理学院</strong>从事博士后研究工作，导师为乔晗教授，主要研究方向为区块链技术、金融科技、数字人民币以及大语言模型与文本分析。</p>
+            </div>
+        </section>
+
+        <!-- 教育背景 -->
+        <section id="education" class="section">
+            <h2>教育背景</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-year">2014 — 2018</div>
+                    <div class="edu-info">
+                        <h3>湖南大学</h3>
+                        <p class="edu-dept">数学与计量经济学院</p>
+                        <p class="edu-major">数学与应用数学 · 本科</p>
+                        <p class="edu-advisor">导师：王节艳 教授</p>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <span class="label">GitHub</span>
-                    <a href="https://github.com/lidengjiajia" target="_blank">lidengjiajia</a>
+                <div class="edu-card">
+                    <div class="edu-year">2018 — 2024</div>
+                    <div class="edu-info">
+                        <h3>湖南大学</h3>
+                        <p class="edu-dept">工商管理学院</p>
+                        <p class="edu-major">管理科学与工程 · 博士</p>
+                        <p class="edu-advisor">导师：陈新 教授 / 马超群 教授</p>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-year">2024 — 至今</div>
+                    <div class="edu-info">
+                        <h3>中国人民银行清算总中心 & 中国科学院大学</h3>
+                        <p class="edu-dept">经济与管理学院</p>
+                        <p class="edu-major">博士后</p>
+                        <p class="edu-advisor">导师：乔晗 教授</p>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- 研究方向 -->
+        <section id="research" class="section">
+            <h2>研究方向</h2>
+            <div class="research-container">
+                <div class="research-item">
+                    <h4>金融科技</h4>
+                    <div class="tags">
+                        <span>数字金融</span>
+                        <span>区块链</span>
+                        <span>数字人民币</span>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <h4>大语言模型</h4>
+                    <div class="tags">
+                        <span>文本分析</span>
+                        <span>实证分析</span>
+                        <span>工程开发</span>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <h4>机器学习</h4>
+                    <div class="tags">
+                        <span>联邦学习</span>
+                        <span>隐私保护</span>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <h4>供应链金融</h4>
+                    <div class="tags">
+                        <span>供应链管理</span>
+                        <span>公司金融</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学术论文 -->
+        <section id="publications" class="section">
+            <h2>学术论文</h2>
             
-            <nav class="nav-menu">
-                <a href="#about">关于</a>
-                <a href="#education">教育背景</a>
-                <a href="#research">研究方向</a>
-                <a href="#publications">学术论文</a>
-                <a href="#projects">科研项目</a>
-                <a href="#achievements">学术成果</a>
-            </nav>
-        </aside>
-
-        <!-- 主内容区 -->
-        <main class="content">
-            
-            <!-- 关于 -->
-            <section id="about" class="section">
-                <h2>关于我</h2>
-                <p>我于2024年在<strong>湖南大学工商管理学院</strong>获得管理科学与工程专业博士学位，导师为马超群教授和陈新教授。2018年本科毕业于湖南大学数学与计量经济学院数学与应用数学专业。</p>
-                <p>目前，我在<strong>中国人民银行清算总中心</strong>和<strong>中国科学院大学经济与管理学院</strong>从事博士后研究工作，导师为乔晗教授。</p>
-                <p>我的研究兴趣主要集中在<strong>金融科技</strong>、<strong>区块链技术</strong>、<strong>数字人民币</strong>以及<strong>大语言模型与文本分析</strong>等领域，致力于探索新兴数字技术在金融领域的应用与创新。</p>
-            </section>
-
-            <!-- 教育背景 -->
-            <section id="education" class="section">
-                <h2>教育背景</h2>
-                <div class="edu-item">
-                    <div class="edu-time">2018 — 2024</div>
-                    <div class="edu-detail">
-                        <h3>湖南大学 · 工商管理学院</h3>
-                        <p>管理科学与工程 · 博士</p>
-                        <p class="advisor">导师：陈新 教授 / 马超群 教授</p>
-                    </div>
-                </div>
-                <div class="edu-item">
-                    <div class="edu-time">2014 — 2018</div>
-                    <div class="edu-detail">
-                        <h3>湖南大学 · 数学与计量经济学院</h3>
-                        <p>数学与应用数学 · 本科</p>
-                        <p class="advisor">导师：王节艳 教授</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 研究方向 -->
-            <section id="research" class="section">
-                <h2>研究方向</h2>
-                <div class="research-grid">
-                    <div class="research-card">
-                        <h4>金融科技</h4>
-                        <div class="research-tags">
-                            <span>数字金融</span>
-                            <span>区块链币</span>
-                            <span>数字人民币</span>
-                        </div>
-                    </div>
-                    <div class="research-card">
-                        <h4>大语言模型</h4>
-                        <div class="research-tags">
-                            <span>文本分析</span>
-                            <span>实证分析</span>
-                            <span>工程开发</span>
-                        </div>
-                    </div>
-                    <div class="research-card">
-                        <h4>机器学习</h4>
-                        <div class="research-tags">
-                            <span>联邦学习</span>
-                            <span>隐私保护</span>
-                        </div>
-                    </div>
-                    <div class="research-card">
-                        <h4>供应链金融</h4>
-                        <div class="research-tags">
-                            <span>供应链管理</span>
-                            <span>公司金融</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 学术论文 -->
-            <section id="publications" class="section">
-                <h2>学术论文</h2>
-                
-                <h3 class="pub-subtitle">已发表</h3>
-                <ol class="pub-list">
-                    <li>
+            <h3 class="sub-title">已发表</h3>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <span class="pub-num">1</span>
+                    <div class="pub-text">
                         <strong>Li, D.</strong>, Ma, C.*, Zhou, Z., Kuang, X., & Lin, Z. (2024). Distributed hyperledger technology in FinTech with artificial intelligence assisted internet of things platform. <em>Expert Systems</em>, 41(6), e13001.
-                    </li>
-                    <li>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-num">2</span>
+                    <div class="pub-text">
                         <strong>Li, D.</strong>, Ma, C., Li, H., & Yang, J.* (2024). The adoption of blockchain and financing constraints: Evidence from China. <em>International Review of Economics & Finance</em>, 96, 103672.
-                    </li>
-                    <li>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-num">3</span>
+                    <div class="pub-text">
                         <strong>Li, D.</strong>, Ma, C., Yang, J.*, & Li, H. (2024). ESG performance and corporate fraud. <em>Finance Research Letters</em>, 62, 105212.
-                    </li>
-                </ol>
+                    </div>
+                </div>
+            </div>
 
-                <h3 class="pub-subtitle">在审稿件</h3>
-                <ol class="pub-list" start="4">
-                    <li>
+            <h3 class="sub-title">在审稿件</h3>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <span class="pub-num">4</span>
+                    <div class="pub-text">
                         <strong>Li, D.</strong>, Ma, C., Qiao, Y.* (2024). Heterogeneous Data Aggregation Algorithm and Privacy Protection Mechanism Based on Blockchain Technology. <em>Decision Support Systems</em>. (一轮返修)
-                    </li>
-                    <li>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-num">5</span>
+                    <div class="pub-text">
                         <strong>Li, D.</strong>, Ma, C., Qiao, Y.* (2024). An explainable and privacy-preserving federated collaborative credit evaluation modelling method based on blockchain. <em>Information Fusion</em>.
-                    </li>
-                    <li>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <span class="pub-num">6</span>
+                    <div class="pub-text">
                         马超群, <strong>李登佳</strong>, 胡宗义, 李好* (2024). 区块链、供应链溢出与企业全要素生产率. <em>数量经济与技术经济研究</em>.
-                    </li>
-                </ol>
-            </section>
-
-            <!-- 科研项目 -->
-            <section id="projects" class="section">
-                <h2>科研项目</h2>
-                <div class="project-item">
-                    <div class="project-title">湖南省科技重大专项</div>
-                    <div class="project-name">新一代区块链高并发计算平台、关键技术及科技金融应用</div>
-                    <div class="project-meta">2018.06 — 2021.07 · 参与</div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- 科研项目 -->
+        <section id="projects" class="section">
+            <h2>科研项目</h2>
+            <div class="project-list">
                 <div class="project-item">
-                    <div class="project-title">国家自然科学基金应急管理项目</div>
-                    <div class="project-name">金融科技背景下非正规金融活动的风险防范与治理研究</div>
-                    <div class="project-meta">2019.01 — 2021.12 · 参与</div>
+                    <span class="project-type">湖南省科技重大专项</span>
+                    <h4>新一代区块链高并发计算平台、关键技术及科技金融应用</h4>
+                    <p>2018.06 — 2021.07 · 参与</p>
                 </div>
                 <div class="project-item">
-                    <div class="project-title">国家社会科学基金重点项目</div>
-                    <div class="project-name">基于区块链的供应链多主体生态协作模式研究</div>
-                    <div class="project-meta">2020.01 — 2022.12 · 参与</div>
+                    <span class="project-type">国家自然科学基金应急管理项目</span>
+                    <h4>金融科技背景下非正规金融活动的风险防范与治理研究</h4>
+                    <p>2019.01 — 2021.12 · 参与</p>
                 </div>
-            </section>
-
-            <!-- 学术成果 -->
-            <section id="achievements" class="section">
-                <h2>学术成果</h2>
-                
-                <h3 class="pub-subtitle">竞赛获奖</h3>
-                <div class="award-item">
-                    <span class="award-year">2023</span>
-                    <span class="award-name">第二届全国研究生金融科技创新大赛 · 一等奖</span>
+                <div class="project-item">
+                    <span class="project-type">国家社会科学基金重点项目</span>
+                    <h4>基于区块链的供应链多主体生态协作模式研究</h4>
+                    <p>2020.01 — 2022.12 · 参与</p>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="pub-subtitle">发明专利</h3>
-                <ul class="patent-list">
-                    <li>马超群, <strong>李登佳</strong>, 米先华, 周中定, 李信儒. 基于区块链的ABS债券发行交易方法及系统、设备、介质. CN113065869A. <span class="status">已授权</span></li>
-                    <li>马超群, <strong>李登佳</strong>, 米先华, 周中定, 李信儒, 兰秋军, 万丽. 一种基于区块链的出口退税融资方法、设备及介质. CN112862468A. <span class="status">已授权</span></li>
-                </ul>
+        <!-- 学术成果 -->
+        <section id="achievements" class="section">
+            <h2>学术成果</h2>
+            
+            <h3 class="sub-title">竞赛获奖</h3>
+            <div class="award-box">
+                <span class="award-year">2023</span>
+                <span class="award-name">第二届全国研究生金融科技创新大赛 · 一等奖</span>
+            </div>
 
-                <h3 class="pub-subtitle">学术著作</h3>
-                <ul class="book-list">
-                    <li>马超群, 兰秋军, 姚征等. <em>Hyperledger Fabric分布式账本技术原理与应用</em>（参与1-6章编写）</li>
-                </ul>
-            </section>
+            <h3 class="sub-title">发明专利</h3>
+            <div class="patent-list">
+                <div class="patent-item">
+                    <p>马超群, <strong>李登佳</strong>, 米先华, 周中定, 李信儒. 基于区块链的ABS债券发行交易方法及系统、设备、介质. CN113065869A. <span class="status">已授权</span></p>
+                </div>
+                <div class="patent-item">
+                    <p>马超群, <strong>李登佳</strong>, 米先华, 周中定, 李信儒, 兰秋军, 万丽. 一种基于区块链的出口退税融资方法、设备及介质. CN112862468A. <span class="status">已授权</span></p>
+                </div>
+            </div>
 
-        </main>
-    </div>
+            <h3 class="sub-title">学术著作</h3>
+            <div class="book-item">
+                <p>马超群, 兰秋军, 姚征等. <em>Hyperledger Fabric分布式账本技术原理与应用</em>（参与1-6章编写）</p>
+            </div>
+        </section>
+
+    </main>
 
     <!-- 页脚 -->
     <footer class="footer">
-        <p>© 2026 李登佳 · 最后更新: 2026年2月</p>
+        <p>© 2026 李登佳 · 最后更新: 2026年1月</p>
     </footer>
 
 </body>
